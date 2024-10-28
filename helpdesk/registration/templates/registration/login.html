@@ -1,0 +1,28 @@
+{% extends 'tickets/base.html' %}
+
+{% block content %}
+
+<h1>Inicio de sesión</h1>
+<div>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control" required>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="text" name="password" class="form-control" required>
+        </p>
+        {% if form.non_field_errors %}
+        <p class="text-danger">Usuario y/o contraseña incorrectos</p>
+        {% endif %}
+        <p>
+            <a href="{% url 'signup' %}">Crear cuenta aqui</a>            
+        </p>
+        <input type="submit" class="btn btn-primary" value="Login">
+        <a href="{% url 'list' %}" class="btn btn-dark">Back</a>
+    </form>
+</div>
+
+{% endblock %}

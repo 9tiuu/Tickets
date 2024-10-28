@@ -1,0 +1,21 @@
+{% extends 'tickets/base.html' %}
+
+{% block content %}
+
+{% if ticket %}
+
+<h3>Detalle del ticket</h3>
+<p><b>ID:</b> {{ ticket.id }}</p>
+<p><b>Titulo:</b> {{ ticket.title }}</p>
+<p><b>Descripcion:</b> {{ ticket.description }}</p>
+<p><b>Creado:</b> {{ ticket.create_at }}</p>
+<p><b>Actualizado:</b> {{ ticket.update_at }}</p>
+<a href="{% url 'list' %}" class="btn btn-primary">Volver atras</a>
+
+{% else %}
+
+<h3>Error al encontrar el ticket</h3>
+
+{% endif %}
+
+{% endblock %}

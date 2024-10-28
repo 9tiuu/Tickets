@@ -1,0 +1,12 @@
+{% extends 'tickets/base.html' %}
+
+{% block content %}
+
+<h2>¿Eliminar ticket: {{ticket.title}}?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'list' %}" class="btn btn-dark">Cancelar</a>
+</form>
+
+{% endblock %}
